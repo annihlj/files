@@ -1,0 +1,58 @@
+# ============================================================================
+# requirements.txt
+# ----------------------------------------------------------------------------
+# WARUM gepinnte (==) Versionen: Reproduzierbarkeit. Ergebnisse, APIs und teils
+# sogar numerische Resultate können sich zwischen Bibliotheksversionen ändern.
+# Für ein wissenschaftliches Portfolio ist es essenziell, die exakte Umgebung
+# dokumentieren zu können ("computational reproducibility").
+#
+# Installation:  pip install -r requirements.txt
+# (empfohlen in einer frischen virtuellen Umgebung, siehe README)
+# ============================================================================
+
+# --- Kern: Datenverarbeitung & numerische Berechnung ---
+pandas==2.2.2
+numpy==1.26.4
+
+# --- Machine Learning (klassisch, tabellarisch) ---
+scikit-learn==1.4.2
+scipy==1.13.0
+
+# --- Gradient Boosting (state of the art fuer tabellarische Daten) ---
+# HinweisL HistGradientBoosting ist bereits in scikit-learn enthalten.
+# Die folgenden Pakete sind optional, aber empfohlen (oft staerker/schneller):
+lightgbm==4.3.0
+xgboost==2.0.3
+
+# --- Visualisierung ---
+matplotlib==3.8.4
+seaborn==0.13.2
+
+# --- Modellinterpretation (Explainable AI) ---
+shap==0.45.0
+
+# --- Umgang mit Klassenungleichgewicht (optional, kritisch zu nutzen) ---
+imbalanced-learn==0.12.2
+
+# --- Persistenz von Modellen/Pipelines ---
+joblib==1.4.0
+
+# --- Datenbeschaffung ---
+kaggle==1.6.12
+
+# --- Interaktive Demo-App ---
+streamlit==1.34.0
+
+# --- Notebooks ---
+jupyter==1.0.0
+ipykernel==6.29.4
+
+# ----------------------------------------------------------------------------
+# HINWEIS zu Versionen: Die in der Entwicklungssandbox getesteten Versionen
+# (pandas 3.x / numpy 2.x / scikit-learn 1.8) sind hier bewusst auf eine breit
+# verbreitete, stabile Kombination zurueckgesetzt, weil mehrere Drittpakete
+# (lightgbm, shap, imbalanced-learn) zum Erstellungszeitpunkt noch nicht
+# vollstaendig fuer numpy 2.x / pandas 3.x freigegeben waren. Wenn du eine sehr
+# aktuelle Umgebung nutzt, kannst du die Pins anheben -- bitte dann die
+# Kompatibilitaet der ML-Pakete pruefen.
+# ----------------------------------------------------------------------------

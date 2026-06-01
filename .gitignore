@@ -1,0 +1,54 @@
+# ============================================================================
+# .gitignore
+# ----------------------------------------------------------------------------
+# WARUM: Rohdaten (mehrere GB) und trainierte Modelle gehoeren NICHT ins Git-Repo.
+# Gruende: (1) Repo-Groesse/Performance, (2) Kaggle-Lizenz untersagt teils die
+# Weiterverbreitung der Daten, (3) Datenschutz. Reproduziert wird ueber Code +
+# data_download.py, nicht durch Eincheck der Daten selbst.
+# ============================================================================
+
+# --- Daten (werden via data_download.py beschafft, nicht versioniert) ---
+data/raw/*
+data/interim/*
+data/processed/*
+# Verzeichnisstruktur dennoch behalten:
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# --- Trainierte Modelle / Pipelines (gross, reproduzierbar) ---
+models/*
+!models/.gitkeep
+
+# --- Generierte Reports/Figuren (optional ignorieren) ---
+reports/figures/*
+reports/tables/*
+!reports/figures/.gitkeep
+!reports/tables/.gitkeep
+
+# --- Generierte Abbildungen (z.B. im Projektwurzelverzeichnis) ---
+*.png
+*.PNG
+
+# --- Geheimnisse / Zugangsdaten (NIEMALS einchecken!) ---
+kaggle.json
+.env
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# --- Betriebssystem / IDE ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- Claude Code (lokale Einstellungen, nicht versionieren) ---
+.claude/
